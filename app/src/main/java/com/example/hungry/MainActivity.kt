@@ -16,7 +16,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //    static void test(){
-    //
-    //    }
 }
