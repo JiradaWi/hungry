@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         yesButton.setOnClickListener{
-            //startActivities(Intent(this, chooseProteinActivity));
             startActivity(Intent(this, chooseProteinActivity::class.java))
         }
     }
