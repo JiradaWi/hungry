@@ -13,6 +13,10 @@ class MainActivity : AppCompatActivity() {
         yesButton.setOnClickListener{
             startActivity(Intent(this, chooseProteinActivity::class.java))
         }
+
+        playMath.setOnClickListener{
+            startActivity(Intent(this, playMathActivity::class.java))
+        }
     }
 
 }

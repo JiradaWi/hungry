@@ -14,6 +14,9 @@ class chooseProteinActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.protein)
         //textView2.setOnclick
+        proteinBack.setOnClickListener{
+            startActivity(Intent(this, MainActivity::class.java))
+        }
         randomFood.setOnClickListener{
             count++
             var food = "";
