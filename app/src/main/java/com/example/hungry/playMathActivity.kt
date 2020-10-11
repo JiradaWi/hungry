@@ -38,6 +38,7 @@ class playMathActivity: AppCompatActivity() {
                     currentscore--
                 }
                 score.text = currentscore.toString()
+                answerBox.text = null
             }
             false
         })
