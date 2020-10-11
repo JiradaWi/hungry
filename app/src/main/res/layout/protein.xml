@@ -7,25 +7,25 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/protein"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:text="Protein"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/foodMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="กระเพราไก่ไข่ดาว"
+        android:layout_marginBottom="392dp"
+        android:text="123"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/randomFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Random Food"
+        app:layout_constraintBottom_toTopOf="@+id/foodMenu"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/protein"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
 </androidx.constraintlayout.widget.ConstraintLayout>
