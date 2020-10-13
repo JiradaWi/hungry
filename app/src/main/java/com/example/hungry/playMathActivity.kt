@@ -69,8 +69,12 @@ class playMathActivity: AppCompatActivity() {
         currentOperation = (0..1).random()
 
         val questionbuilder = StringBuilder()
-        questionbuilder.append(firstnum).append( getCurrentOperation(currentOperation) ).append(secondnum)
-        // val question = questionbuilder.toString()
+        if(firstnum >=  secondnum){
+            questionbuilder.append(firstnum).append( getCurrentOperation(currentOperation) ).append(secondnum)
+        }else{
+            questionbuilder.append(secondnum).append( getCurrentOperation(currentOperation) ).append(firstnum)
+            firstnum = secondnum.also { secondnum = firstnum }
+        }
 
         question.text = questionbuilder.toString()
         question.visibility = View.VISIBLE
