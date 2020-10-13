@@ -59,7 +59,7 @@ class playMathActivity: AppCompatActivity() {
         })
     }
 
-    fun generateNewQuestion() {
+    private fun generateNewQuestion() {
         if(currentscore > 3){
             endNumber = 1000
         }
@@ -81,7 +81,7 @@ class playMathActivity: AppCompatActivity() {
 
     }
 
-    fun getCurrentOperation(oprtn: Int): String{
+    private fun getCurrentOperation(oprtn: Int): String{
         return operationMaster.get(oprtn.toString()).toString()
     }
 }
