@@ -12,6 +12,11 @@ class playMathActivity: AppCompatActivity() {
     var secondnum = 0
 
     var currentscore = 0
+
+    var endNumber = 100
+    var currentOperation = 0
+
+    val operationMaster = mapOf("0" to "+", "1" to "-")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.math_game)
@@ -20,7 +25,10 @@ class playMathActivity: AppCompatActivity() {
             startbutton.visibility = View.INVISIBLE
 
             scorelabel.visibility = View.VISIBLE;
+
+            score.text = currentscore.toString()
             score.visibility = View.VISIBLE
+
             answerBox.visibility = View.VISIBLE
 
             generateNewQuestion()
@@ -28,10 +36,17 @@ class playMathActivity: AppCompatActivity() {
 
         answerBox.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
             val answer = answerBox.text
+            var correctanswer = 0
           //  println("answer: "+answer.toString().toIntOrNull())
             if (event.action == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-
-                if(firstnum + secondnum == answer.toString().toIntOrNull()){
+                if(getCurrentOperation(currentOperation) == "+"){
+                    correctanswer = firstnum + secondnum
+                }else if(getCurrentOperation(currentOperation) == "-"){
+                    correctanswer = firstnum - secondnum
+                }else{
+                    println("Operation not supported.")
+                }
+                if(correctanswer == answer.toString().toIntOrNull()){
                     currentscore++
                     generateNewQuestion()
                 } else{
@@ -45,15 +60,24 @@ class playMathActivity: AppCompatActivity() {
     }
 
     fun generateNewQuestion() {
-        firstnum  = (0..100).random()
-        secondnum  = (0..100).random()
+        if(currentscore > 3){
+            endNumber = 1000
+        }
+        firstnum  = (0..endNumber).random()
+        secondnum  = (0..endNumber).random()
+
+        currentOperation = (0..1).random()
 
         val questionbuilder = StringBuilder()
-        questionbuilder.append(firstnum).append(" + ").append(secondnum)
+        questionbuilder.append(firstnum).append( getCurrentOperation(currentOperation) ).append(secondnum)
         // val question = questionbuilder.toString()
 
         question.text = questionbuilder.toString()
         question.visibility = View.VISIBLE
 
+    }
+
+    fun getCurrentOperation(oprtn: Int): String{
+        return operationMaster.get(oprtn.toString()).toString()
     }
 }
