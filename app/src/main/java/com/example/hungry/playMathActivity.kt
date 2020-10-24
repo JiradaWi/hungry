@@ -62,6 +62,10 @@ class playMathActivity: AppCompatActivity() {
     private fun generateNewQuestion() {
         if(currentscore > 3){
             endNumber = 1000
+            scorelabel.text = "Wow!"
+        }else{
+            endNumber = 100
+            scorelabel.text = "Score"
         }
         firstnum  = (0..endNumber).random()
         secondnum  = (0..endNumber).random()

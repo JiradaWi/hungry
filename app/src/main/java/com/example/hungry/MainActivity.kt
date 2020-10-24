@@ -10,12 +10,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        yesButton.setOnClickListener{
-            startActivity(Intent(this, chooseProteinActivity::class.java))
-        }
+//        yesButton.setOnClickListener{
+//            startActivity(Intent(this, chooseProteinActivity::class.java))
+//        }
 
         playMath.setOnClickListener{
-            startActivity(Intent(this, playMathActivity::class.java))
+           startActivity(Intent(this, playMathActivity::class.java))
         }
     }
 
